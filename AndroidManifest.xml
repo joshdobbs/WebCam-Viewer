@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.joshdobbs.demo.webcamviewer"
+      android:versionCode="1"
+      android:versionName="1.0"
+      android:installLocation="auto"><!-- enable apps2sd -->
+    <application android:icon="@drawable/icon" android:label="@string/app_name" android:debuggable="true"><!-- required to debug on an actual device -->
+        <activity android:name=".main"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+    
+    <supports-screens
+     	android:smallScreens="true"
+     	android:largeScreens="true"
+     	android:anyDensity="true">
+     </supports-screens>
+     
+    <uses-sdk android:minSdkVersion="3" android:targetSdkVersion="7"/><!-- Targets Android 2.2(Froyo) but will work on Android 1.5(cupcake) -->
+    
+    <uses-feature android:name="android.hardware.touchscreen" android:required="true" /><!-- always list hardware required to prevent user errors and bad comments -->
+    
+    <uses-permission android:name="android.permission.INTERNET" /><!-- required to retrieve images from the internet -->
+
+</manifest> 
